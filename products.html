@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hlasela Products</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="header-inner">
+            <h1>🌿 Hlasela Wellness Store</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="products.html" class="active">Products</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Order</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h2>Shop the best Edmark health products</h2>
+        <p>Easy cart, quick WhatsApp checkout, and order tracking.</p>
+    </section>
+
+    <section class="featured">
+        <h2>All Products</h2>
+        <div id="productGrid" class="products"></div>
+    </section>
+
+    <section class="cart-section">
+        <div class="cart-panel">
+            <h2>🛒 Your Cart</h2>
+            <div id="cartItems"></div>
+            <p class="cart-total">Total: R<span id="cartTotal">0</span></p>
+            <button id="checkoutButton" class="btn-primary" disabled>Checkout via WhatsApp</button>
+            <button class="btn-secondary" onclick="clearCart()">Clear Cart</button>
+            <button class="btn-primary" onclick="payfastCheckout()">PayFast Checkout</button>
+            <button class="btn-primary" onclick="serverSubmitOrder()">Submit to Backend API</button>
+        </div>
+
+        <div class="orders-panel">
+            <h2>📦 Order Tracking</h2>
+            <div id="ordersList"></div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Hlasela Store | WhatsApp: 27834143083</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

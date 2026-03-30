@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Order</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="header-inner">
+            <h1>🌿 Hlasela Wellness Store</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Order</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="featured">
+        <h1>Place Your Order 📦</h1>
+
+        <div class="order-container">
+
+            <h2>3 Easy Ways to Order:</h2>
+
+            <div class="order-method">
+                <h3>1️⃣ WhatsApp (FASTEST) 📱</h3>
+                <p>Click "Order via WhatsApp" on any product page</p>
+                <p>Our team will respond immediately!</p>
+            </div>
+
+            <div class="order-method">
+                <h3>2️⃣ Fill This Form 📝</h3>
+                <form>
+                    <input type="text" placeholder="Your Name" required><br>
+                    <input type="email" placeholder="Your Email" required><br>
+                    <input type="text" placeholder="Your Phone Number" required><br>
+                    <label for="product-select" style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-primary);">Select Products:</label>
+                    <select id="product-select" name="products" required style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: var(--radius-md); margin-bottom: 16px; background: white; font-size: 16px;">
+                        <option value="">-- Choose a product --</option>
+                        <option value="cafe73">Cafe'73 Ginseng Coffee - R150</option>
+                        <option value="splina">Splina Liquid Chlorophyll - R200</option>
+                        <option value="shake-off">Shake Off Phyto Fiber - R250</option>
+                        <option value="spiro">Spiro Spirulina Cereal - R180</option>
+                        <option value="multiple">Multiple Products (will specify in message)</option>
+                    </select><br>
+                    <textarea placeholder="What products do you want?"></textarea><br>
+                    <button type="submit" class="btn-primary">Send Order</button>
+                </form>
+            </div>
+
+            <div class="order-method">
+                <h3>3️⃣ Call Us ☎️</h3>
+                <p>WhatsApp: <strong>27 834 143 083</strong></p>
+                <p>Available Monday - Friday</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="featured">
+        <h2>Shop these products</h2>
+        <div id="productGrid" class="products"></div>
+    </section>
+
+    <div id="miniCart" class="mini-cart"></div>
+    <div id="productModal" class="modal" onclick="closeProductModal()">
+        <div class="modal-content" onclick="event.stopPropagation()"></div>
+    </div>
+    <footer>
+        <p>© 2026 Hlasela Store | WhatsApp: 27 834 143 083</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

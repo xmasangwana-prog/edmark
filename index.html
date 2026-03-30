@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hlasela Wellness Store - Premium Health & Wellness Products</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Transform your health with premium Edmark wellness products. Authentic supplements for energy, vitality, and optimal wellness. Trusted by thousands across South Africa.">
+    <meta name="keywords" content="wellness, health, Edmark products, natural supplements, energy, vitality, chlorophyll, ginseng coffee, spirulina">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Hlasela Wellness Store - Premium Health Products">
+    <meta property="og:description" content="Transform your health with authentic Edmark wellness products">
+    <meta property="og:type" content="website">
+</head>
+
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div class="reading-progress" id="readingProgress"></div>
+
+    <header>
+        <div class="header-inner">
+            <h1>🌿 Cynthia's Hlasela Wellness Store</h1>
+            <nav>
+                <a href="index.html" aria-label="Home page" class="active">Home</a>
+                <a href="products.html" aria-label="Browse products">Products</a>
+                <a href="about.html" aria-label="Learn about us">About</a>
+                <a href="contact.html" aria-label="Place an order">Order</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span> Trusted by 10,000+ Happy Customers</span>
+                </div>
+                <h2>Transform Your Health, Rise Up to Wellness </h2>
+                <p>Discover premium Edmark wellness products that deliver real results. From boosting energy to enhancing vitality, we're your trusted partner in health transformation.</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">10K+</span>
+                        <span class="stat-label">Satisfied Customers</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Authentic Products</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">5</span>
+                        <span class="stat-label">Average Rating</span>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <button onclick="location.href='products.html'" class="btn-primary" aria-label="Shop our products now">Shop Products</button>
+                    <button onclick="location.href='about.html'" class="btn-secondary" aria-label="Learn about our story">Our Story</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured">
+            <h2>Featured Products</h2>
+            <div class="products-wrapper">
+                <div class="products-container" id="productGrid">
+                    <!-- Products will be dynamically loaded here -->
+                </div>
+                <div class="carousel-controls">
+                    <button class="carousel-btn prev" onclick="moveCarousel(-1)" aria-label="Previous products">‹</button>
+                    <button class="carousel-btn next" onclick="moveCarousel(1)" aria-label="Next products">›</button>
+                </div>
+                <div class="carousel-progress" id="carouselProgress"></div>
+                <div class="swipe-hint" id="swipeHint">← Swipe to navigate →</div>
+            </div>
+            <div class="carousel-indicators" id="carouselIndicators">
+                <!-- Indicators will be dynamically added here -->
+            </div>
+        </section>
+
+        <section class="value-proposition" aria-labelledby="value-heading">
+            <h2 id="value-heading">Why Choose Hlasela Wellness?</h2>
+            <div class="value-grid">
+                <div class="value-card fade-in">
+                    <div class="value-icon"></div>
+                    <h3>100% Natural Ingredients</h3>
+                    <p>All our products contain only the finest natural ingredients, carefully selected for maximum effectiveness and safety.</p>
+                </div>
+                <div class="value-card fade-in">
+                    <div class="value-icon"></div>
+                    <h3>Science-Backed Formulas</h3>
+                    <p>Edmark products are developed using cutting-edge research and traditional wellness wisdom for optimal results.</p>
+                </div>
+                <div class="value-card fade-in">
+                    <div class="value-icon"></div>
+                    <h3>Proven Results</h3>
+                    <p>Join thousands of satisfied customers who have transformed their health with our premium wellness solutions.</p>
+                </div>
+                <div class="value-card fade-in">
+                    <div class="value-icon"></div>
+                    <h3>Personalized Care</h3>
+                    <p>We provide expert guidance and support to help you choose the right products for your wellness journey.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="case-studies" aria-labelledby="case-studies-heading">
+            <h2 id="case-studies-heading">Success Stories</h2>
+            <div class="case-studies-grid">
+                <div class="case-study-card fade-in">
+                    <div class="case-study-image" aria-hidden="true"></div>
+                    <div class="case-study-content">
+                        <h3 class="case-study-title">Energy Transformation</h3>
+                        <p class="case-study-description">A 45-year-old professional regained peak energy levels and productivity with our Splina supplement program.</p>
+                        <div class="case-study-results">
+                            <div class="result-metric">
+                                <span class="result-number">85%</span>
+                                <span class="result-label">Energy Increase</span>
+                            </div>
+                            <div class="result-metric">
+                                <span class="result-number">30</span>
+                                <span class="result-label">Days Program</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-study-card fade-in">
+                    <div class="case-study-image" aria-hidden="true">🎯</div>
+                    <div class="case-study-content">
+                        <h3 class="case-study-title">Focus Enhancement</h3>
+                        <p class="case-study-description">Student improved academic performance through consistent use of Cafe73 and Mocha products.</p>
+                        <div class="case-study-results">
+                            <div class="result-metric">
+                                <span class="result-number">25%</span>
+                                <span class="result-label">Better Focus</span>
+                            </div>
+                            <div class="result-metric">
+                                <span class="result-number">3.5</span>
+                                <span class="result-label">GPA Increase</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-study-card fade-in">
+                    <div class="case-study-image" aria-hidden="true">⚡</div>
+                    <div class="case-study-content">
+                        <h3 class="case-study-title">Wellness Journey</h3>
+                        <p class="case-study-description">Complete health transformation with our comprehensive product range and wellness coaching.</p>
+                        <div class="case-study-results">
+                            <div class="result-metric">
+                                <span class="result-number">20kg</span>
+                                <span class="result-label">Weight Loss</span>
+                            </div>
+                            <div class="result-metric">
+                                <span class="result-number">90</span>
+                                <span class="result-label">Day Program</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="trust-badges" aria-labelledby="trust-heading">
+            <h3 id="trust-heading">Why Choose Hlasela Wellness</h3>
+            <div class="badges-container">
+                <div class="badge-item">
+                    <div class="badge-icon" aria-hidden="true">✓</div>
+                    <div class="badge-text">100% Authentic Products</div>
+                </div>
+                <div class="badge-item">
+                    <div class="badge-icon" aria-hidden="true">🏆</div>
+                    <div class="badge-text">Award Winning Service</div>
+                </div>
+                <div class="badge-item">
+                    <div class="badge-icon" aria-hidden="true">🚚</div>
+                    <div class="badge-text">Fast Nationwide Delivery</div>
+                </div>
+                <div class="badge-item">
+                    <div class="badge-icon" aria-hidden="true">💬</div>
+                    <div class="badge-text">24/7 Customer Support</div>
+                </div>
+                <div class="badge-item">
+                    <div class="badge-icon" aria-hidden="true">🔒</div>
+                    <div class="badge-text">Secure Payment Options</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="miniCart" class="mini-cart" aria-label="Shopping cart"></div>
+
+    <div id="productModal" class="modal" onclick="closeProductModal()" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeProductModal()" aria-label="Close modal">&times;</button>
+            <h3 id="modal-title"></h3>
+        </div>
+    </div>
+
+    <button class="scroll-to-top" id="scrollToTop" onclick="scrollToTop()" aria-label="Scroll to top of page">↑</button>
+
+    <footer>
+        <p> 2026 Hlasela Store | WhatsApp: 27834143083
+        </p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
