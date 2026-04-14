@@ -35,21 +35,60 @@
 
             <div class="order-method">
                 <h3>2️⃣ Fill This Form 📝</h3>
-                <form>
-                    <input type="text" placeholder="Your Name" required><br>
-                    <input type="email" placeholder="Your Email" required><br>
-                    <input type="text" placeholder="Your Phone Number" required><br>
-                    <label for="product-select" style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-primary);">Select Products:</label>
-                    <select id="product-select" name="products" required style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: var(--radius-md); margin-bottom: 16px; background: white; font-size: 16px;">
-                        <option value="">-- Choose a product --</option>
-                        <option value="cafe73">Cafe'73 Ginseng Coffee - R150</option>
-                        <option value="splina">Splina Liquid Chlorophyll - R200</option>
-                        <option value="shake-off">Shake Off Phyto Fiber - R250</option>
-                        <option value="spiro">Spiro Spirulina Cereal - R180</option>
-                        <option value="multiple">Multiple Products (will specify in message)</option>
-                    </select><br>
-                    <textarea placeholder="What products do you want?"></textarea><br>
-                    <button type="submit" class="btn-primary">Send Order</button>
+                <form action="/submit_order" method="POST" onsubmit="return validateForm(this)">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+27 XX XXX XXXX" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="product-select">Select Product</label>
+                        <select id="product-select" name="product" required>
+                            <option value="">-- Choose a product --</option>
+                            <option value="cafe73">Cafe'73 Ginseng Coffee - R150</option>
+                            <option value="splina">Splina Liquid Chlorophyll - R200</option>
+                            <option value="shake-off">Shake Off Phyto Fiber - R250</option>
+                            <option value="spiro">Spiro Spirulina Cereal - R180</option>
+                            <option value="multiple">Multiple Products (specify below)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="quantity">Quantity</label>
+                        <input type="number" id="quantity" name="quantity" min="1" max="10" placeholder="1" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Additional Message (Optional)</label>
+                        <textarea id="message" name="message" placeholder="Special instructions or questions..." rows="4"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="delivery">Delivery Method</label>
+                        <select id="delivery" name="delivery" required>
+                            <option value="">-- Select delivery --</option>
+                            <option value="collection">Self Collection</option>
+                            <option value="delivery">Home Delivery (Johannesburg)</option>
+                            <option value="courier">Courier Service</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="address">Delivery Address (if applicable)</label>
+                        <textarea id="address" name="address" placeholder="Street address, city, postal code..." rows="3"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary">Submit Order</button>
                 </form>
             </div>
 
@@ -75,6 +114,53 @@
     <footer>
         <p>© 2026 Hlasela Store | WhatsApp: 27 834 143 083</p>
     </footer>
+    <script>
+        function validateForm(form) {
+            // Basic form validation
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const product = document.getElementById('product-select').value;
+            const quantity = document.getElementById('quantity').value;
+            const message = document.getElementById('message').value.trim();
+            
+            // Validate required fields
+            if (!name || !email || !phone || !product) {
+                alert('Please fill in all required fields (Name, Email, Phone, and Product)');
+                return false;
+            }
+            
+            // Validate email format
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address');
+                return false;
+            }
+            
+            // Validate phone format (basic South African format)
+            const phoneRegex = /^(\+27|0)?[0-9]{9,15}$/;
+            if (!phoneRegex.test(phone)) {
+                alert('Please enter a valid South African phone number');
+                return false;
+            }
+            
+            // Validate quantity
+            if (quantity < 1 || quantity > 10) {
+                alert('Quantity must be between 1 and 10');
+                return false;
+            }
+            
+            // If "multiple products" selected, check if message is provided
+            if (product === 'multiple' && !message) {
+                alert('Please specify which products you want in the message field');
+                return false;
+            }
+            
+            // If validation passes, form will submit to server
+            alert('Order submitted successfully! We will contact you soon.');
+            return true;
+        }
+    </script>
     <script src="script.js"></script>
 </body>
 
