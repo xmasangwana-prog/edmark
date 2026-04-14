@@ -35,7 +35,8 @@
 
             <div class="order-method">
                 <h3>2️⃣ Fill This Form 📝</h3>
-                <form action="/submit_order" method="POST" onsubmit="return validateForm(this)">
+                <form name="order-form" method="POST" data-netlify="true" onsubmit="return validateForm(this)">
+                    <input type="hidden" name="form-name" value="order-form">
                     <div class="form-group">
                         <label for="name">Full Name</label>
                         <input type="text" id="name" name="name" placeholder="Enter your full name" required>
@@ -112,7 +113,7 @@
         <div class="modal-content" onclick="event.stopPropagation()"></div>
     </div>
     <footer>
-        <p>© 2026 Hlasela Store | WhatsApp: 27 834 143 083</p>
+        <p> 2026 Hlasela Store | WhatsApp: 27 834 143 083</p>
     </footer>
     <script>
         function validateForm(form) {
@@ -156,10 +157,27 @@
                 return false;
             }
             
-            // If validation passes, form will submit to server
-            alert('Order submitted successfully! We will contact you soon.');
+            // If validation passes, show loading message
+            const submitBtn = form.querySelector('button[type="submit"]');
+            submitBtn.textContent = 'Submitting...';
+            submitBtn.disabled = true;
+            
+            // Let Netlify handle the form submission
             return true;
         }
+        
+        // Handle Netlify form success/error
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('form[name="order-form"]');
+            
+            // Check if we're coming back from a successful submission
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('success') === 'true') {
+                alert('Order submitted successfully! We will contact you soon.');
+                // Clean up the URL
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
+        });
     </script>
     <script src="script.js"></script>
 </body>
