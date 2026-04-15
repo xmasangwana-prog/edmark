@@ -1,6 +1,6 @@
 [
-  { "id": 1, "name": "Cafe'73 Ginseng Coffee", "description": "Boost energy and wellness", "price": 150, "image": "cafe73.png", "details": "Instant coffee with ginseng and ganoderma extract." },
-  { "id": 2, "name": "Splina", "description": "Daily nutrition supplement", "price": 200, "image": "splina.png", "details": "100% natural spirulina liquid chlorophyll formula." },
-  { "id": 3, "name": "Shake Off", "description": "Immune system boost", "price": 250, "image": "shake.png", "details": "Phyto fiber drink for digestion and detox." },
-  { "id": 4, "name": "Spiro", "description": "Energy & metabolism", "price": 180, "image": "spiro.png", "details": "Spirulina cereal mix with antioxidants." }
+  { "id": 1, "name": "Cafe'73 Ginseng Coffee", "description": "Boost energy and wellness", "price": 300, "image": "cafe73.png", "details": "Instant coffee with ginseng and ganoderma extract." },
+  { "id": 2, "name": "Splina", "description": "Daily nutrition supplement", "price": 660, "image": "splina.png", "details": "100% natural spirulina liquid chlorophyll formula." },
+  { "id": 3, "name": "Shake Off", "description": "Immune system boost", "price": 660, "image": "shake.png", "details": "Phyto fiber drink for digestion and detox." },
+  { "id": 4, "name": "Spiro", "description": "Energy & metabolism", "price": 300, "image": "spiro.png", "details": "Spirulina cereal mix with antioxidants." }
 ]
